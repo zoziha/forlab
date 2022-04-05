@@ -1,12 +1,31 @@
 # Forlab
-Forlab is a Fortran module that provides a lot of functions for scientific computing mostly inspired by Matlab and Python's module NumPy.
 
-| | |  
-|:-:|---|
-| **Version:** | 1.0.3 |
-| **Author:** | Keurfon Luu |
-| **Web site:** | https://github.com/keurfonluu/forlab |
-| **Copyright:** | This document has been placed in the public domain. |
-| **License:** | Forlab is released under the MIT License. |
+[![MIT](https://img.shields.io/github/license/zoziha/forlab?color=pink)](LICENSE)
+[![fpm](https://github.com/zoziha/forlab/workflows/fpm/badge.svg)](https://github.com/zoziha/forlab/actions)
+[![msys2-fpm](https://github.com/zoziha/forlab/workflows/msys2-fpm/badge.svg)](https://github.com/zoziha/forlab/actions)
 
-**NOTE:** Forlab has been implemented in the frame of my Ph. D. thesis. If you find any error or bug, or if you have any suggestion, please don't hesitate to contact me.
+`Forlab` is a Fortran module that provides a lot of functions for scientific computing mostly inspired by Matlab and Python's package NumPy.
+
+## Build with Fortran-lang/fpm
+
+Fortran Package Manager (fpm) is a package manager and build system for Fortran. <br>
+You can build `forlab` using the provided `fpm.toml`:
+
+```sh
+fpm build --profile release
+```
+
+To use `forlab` within your `fpm` project, add the following lines to your `fpm.toml` file:
+
+```toml
+[dependencies]
+forlab = { git="https://github.com/zoziha/forlab" }
+```
+
+## Links
+
+- [keurfonluu/Forlab](https://github.com/keurfonluu/Forlab)  
+   Forlab is mainly developed by Keurfon Luu originally.
+- [stdlib](https://github.com/fortran-lang/stdlib)  
+   Fortran standard library.
+- [fortran-fans/forlab](https://github.com/fortran-fans/forlab)

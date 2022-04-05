@@ -1,0 +1,13 @@
+name = "forlab"
+version = "1.0.1"
+license = "MIT"
+author  = "forlab contributors"
+maintainer = "zuo.zhihua@qq.com"
+copyright = "2016-2021 forlab contributors"
+description = "A Fortran module that provides a lot of functions for scientific computing"
+categories = ["numerical"]
+keywords = ["numerical", "easy-to-use"]
+
+[build]
+external-modules = ["mpi"]
+auto-examples = false

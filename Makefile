@@ -80,8 +80,8 @@ TARGET3 = interp.exe
 # Directories
 SRCDIR = src
 OBJDIR = obj
-LIBDIR = $(SRCDIR)/lib
-TSTDIR = $(SRCDIR)/tests
+LIBDIR = $(SRCDIR)
+TSTDIR = example
 
 # Link objects to create executable (tab required on second line)
 OBJS1 = $(OBJDIR)/forlab.o \
@@ -107,6 +107,7 @@ interp: $(TARGET3)
 # ======================================================================
 vpath %.o obj
 vpath %.mod obj
+vpath %.F90 $(LIBDIR) $(TSTDIR)
 vpath %.f90 $(LIBDIR) $(TSTDIR)
 COMPILE = $(FC) $(FFLAGS) $(OMP) $(MPI_INC) $(MPI_LIB)
 
@@ -114,6 +115,9 @@ $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
 $(OBJDIR)/%.o: %.f90 | $(OBJDIR)
+	$(COMPILE) -c $^ -o $@ $(MOD)$(OBJDIR)
+
+$(OBJDIR)/%.o: %.F90 | $(OBJDIR)
 	$(COMPILE) -c $^ -o $@ $(MOD)$(OBJDIR)
 
 $(TARGET1): $(OBJS1)
