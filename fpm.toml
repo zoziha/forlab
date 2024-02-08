@@ -11,3 +11,6 @@ keywords = ["numerical", "easy-to-use"]
 [build]
 external-modules = ["mpi"]
 auto-examples = false
+
+[install]
+library = true
